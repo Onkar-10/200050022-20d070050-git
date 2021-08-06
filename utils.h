@@ -2,13 +2,9 @@
 
 bool login(string name, string password)
 {
-    if(!find_user(name))
-    return false;
-    else
-    {
-         if(get_password(name)==password)
-         return true;
-         else
-         return false;
-    }
+	if (userids.find(name)==userids.end())
+		return false;
+	int user_id=userids[name];
+	if (passwords[user_id]==password) return true;
+	return false;
 }
